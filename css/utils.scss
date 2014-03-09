@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+@mixin vendor-prefix($name, $value, $prefixName: true, $prefixValue: false, $reverse: false) {
+    $vendorPrefixes: ("-webkit-", "-ms-", "-moz-", "-o-", "");
+    
+    @each $vendorPrefix in $vendorPrefixes {
+        @if $prefixName == true and $prefixValue == false {
+            #{$vendorPrefix}#{$name}: #{$value};
+        } @elseif $prefixName == false and $prefixValue == true {
+            #{$name}: #{$vendorPrefix}#{$value};
+        } @elseif $prefixName == true and $prefixValue == true {
+            #{$vendorPrefix}#{$name}: #{$vendorPrefix}#{$value};
+        }
+    }
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-o-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}

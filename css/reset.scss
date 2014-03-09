@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+* {
+    @include vendor-prefix("box-sizing", "border-box");
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Verdana";
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+figure {
+    font-size: 0;
+}
+
+img {
+    border: none;
+}
+
+input, textarea {
+    font-family: inherit;
+}
